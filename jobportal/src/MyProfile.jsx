@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default class SearchJobs extends React.Component {
+export default class MyProfile extends React.Component {
     render() {
         return (
             <div>
-                <h1>Search</h1>
+            <h1>My Profile</h1>
             </div>
         )
     }
