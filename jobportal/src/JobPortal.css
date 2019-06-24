@@ -1,0 +1,27 @@
+.navigation-div {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.navigation-link {
+    background-color: white;
+    height: 100%;
+    top: 0;
+    width: 100%;
+}
+
+img,
+b {
+    color: green;
+    flex-direction: row;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    border: 0.5px lightgrey solid;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+}
+
+img {
+    height: 45;
+    width: 45;
+}

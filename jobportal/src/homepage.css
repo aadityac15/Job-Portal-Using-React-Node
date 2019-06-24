@@ -1,0 +1,22 @@
+.home-div-main {
+    text-align: center;
+    width: 100%;
+}
+
+.home-div-list {
+    padding-right: 5%;
+    padding-left: 5%;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 1%;
+}
+
+.home-div-heading h3,
+h1 {
+    margin-block-start: unset;
+    margin-block-end: unset;
+}
+
+.home-div-heading img {
+    align-content: left
+}
