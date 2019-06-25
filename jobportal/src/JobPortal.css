@@ -6,6 +6,9 @@
 .navigation-link {
     background-color: white;
     height: 100%;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
     top: 0;
     width: 100%;
 }
