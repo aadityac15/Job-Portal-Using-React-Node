@@ -6,6 +6,7 @@ export default class HomePage extends React.Component {
         super(props);
         this.state = {
             flag : false,
+            jobs : [],
         }
     }
 
@@ -60,10 +61,10 @@ export default class HomePage extends React.Component {
         return (
             <div className="home-div-main container">
                 <div className='home-div-sub container'>
-                    <div className='jumbotron'>
+                    <div className='jumbotron' id = "jumbotron-changes">
                         <h1>Job Portal</h1>
                     </div>
-                    <h5 onClick = {this.showJobs}><a>Click here to check Current Jobs</a></h5>
+                    <h5><button className = 'btn-link' onClick = {this.showJobs}>Click here to check Current Jobs</button></h5>
                 </div>
                 <div>
                 {this.state.flag ?

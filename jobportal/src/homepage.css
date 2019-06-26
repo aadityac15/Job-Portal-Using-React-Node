@@ -27,12 +27,18 @@ h1 {
     align-content: left
 }
 
+#jumbotron-changes {
+    background-color: rgb(160, 222, 135);
+}
+
 
 /*  */
 
 
 /* Tags */
 
-a {
+button {
     cursor: pointer;
+    border: unset;
+    background-color: unset;
 }
