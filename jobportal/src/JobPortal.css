@@ -6,6 +6,10 @@
     display: inline-block;
 }
 
+.header {
+    background-color: ghostwhite;
+}
+
 .logo {
     height: 56px;
     overflow: hidden;
@@ -66,6 +70,10 @@
 
 .u-inlineBlock {
     display: inline-block;
+}
+
+.u-padding-unset {
+    padding-inline-start: unset;
 }
 
 

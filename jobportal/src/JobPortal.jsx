@@ -15,7 +15,7 @@ export default class JobPortal extends React.Component {
                         <div className='navigation-header container' id = 'bootstrap-overrrides'>
                             <div className='navigation-div u-inlineBlock u-nowrap'>
                                 <span>
-                                    <ul className='navbar-link u-inline u-vAlignTop'>
+                                    <ul className='navbar-link u-inline u-vAlignTop u-padding-unset' >
                                         <li>
                                             <Link to="/" ><img className='logo navbar-brand' alt='Logo' src={require("./Image.jpg")} height='80' widht='80' /></Link>
                                         </li>
