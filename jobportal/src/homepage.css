@@ -1,6 +1,12 @@
 .home-div-main {
     text-align: center;
     width: 100%;
+    border-bottom: 1px black solid;
+}
+
+.home-div-sub {
+    padding-bottom: 2%;
+    padding-top: 2%;
 }
 
 .home-div-list {

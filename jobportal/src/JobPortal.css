@@ -1,6 +1,41 @@
+/* Classes */
+
 .navigation-div {
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding-top: 1%;
+    width: 100%;
+    display: inline-block;
+}
+
+.logo {
+    height: 56px;
+    overflow: hidden;
+    text-align: left;
+    width: 56px;
+}
+
+.u-nowrap {
+    white-space: nowrap;
+}
+
+.navigation-header {
+    border-bottom: 1px black solid;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    /* background-color: rgb(207, 225, 231); */
+    /* background-clip: padding-box; */
+}
+
+.li-spacing {
+    padding-right: 30%;
+}
+
+.b-spacing {
+    padding-right: 2%;
+}
+
+.link-div {
+    float: right;
+    margin-right: 5%;
 }
 
 .navigation-link {
@@ -13,6 +48,41 @@
     width: 100%;
 }
 
+.img-fluid {
+    max-height: 0.5%;
+}
+
+.logoWrapper {
+    height: 60px;
+}
+
+.u-vAlignTop {
+    vertical-align: top;
+}
+
+.u-inline li {
+    display: inline;
+}
+
+.u-inlineBlock {
+    display: inline-block;
+}
+
+
+/* ID */
+
+#bootstrap-overrides div {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+
+/* Tags */
+
+li {
+    list-style-type: none;
+}
+
 img,
 b {
     color: green;
@@ -22,9 +92,4 @@ b {
     border: 0.5px lightgrey solid;
     padding-top: 1.5%;
     padding-bottom: 1.5%;
-}
-
-img {
-    height: 45;
-    width: 45;
 }
