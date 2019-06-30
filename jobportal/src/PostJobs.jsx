@@ -1,6 +1,7 @@
 import React from 'react';
 import './postjobs.css'
 import HomePage from './HomePage';
+import { tsImportEqualsDeclaration } from '@babel/types';
 
 
 export default class PostJobs extends React.Component {
@@ -11,13 +12,17 @@ export default class PostJobs extends React.Component {
             job: {
                 title: [],
                 description: []
-            }
+            },
+            title : []
         }
     }
 
     addNewActivity = (e) =>
         {
-                
+              const title  = e.target.value;
+              this.setState((prevState) => ({
+                  title
+            }));
         }
 
 
@@ -52,7 +57,7 @@ export default class PostJobs extends React.Component {
                         </table>
                     </form>
                     <div>
-                        {/* <HomePage /> */}
+                        {this.state.title}
 
                     </div>
                 </div>
