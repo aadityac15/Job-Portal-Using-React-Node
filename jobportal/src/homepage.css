@@ -28,7 +28,8 @@ h1 {
 }
 
 #jumbotron-changes {
-    background-color: rgb(160, 222, 135);
+    background-color: #282c34;
+    color: white;
 }
 
 
