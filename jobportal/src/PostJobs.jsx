@@ -9,56 +9,72 @@ export default class PostJobs extends React.Component {
         super(props);
 
         this.state = {
-            job: {
-                title: [],
-                description: []
-            },
-            title : []
+            title: '',
+            description: '',
+            flag: false,
         }
     }
 
-    addNewActivity = (e) =>
-        {
-              const title  = e.target.value;
-              this.setState((prevState) => ({
-                  title
-            }));
-        }
+    addChanges = (e) => {
+        // const newTitle = e.target.value;
+        // console.log(newTitle);
+        e.preventDefault();
+        console.log(e.target.name);
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+        console.log("The State : ", this.state);
+    }
 
-
-
+    addNewActivity = (e) => {
+        e.preventDefault();
+        this.setState(prevState => {
+            return { flag: !prevState.flag }
+        });
+        console.log(e);
+        console.log(this.state);
+    }
 
     render() {
+        const { job } = this.state;
         return (
             <div className='container post-jobs-main'>
                 <h1>Post a Job</h1>
+                <br />
                 <div className='post-job-form-div container'>
-                    <form onSubmit={(e) => {this.addNewActivity(e)}}>
-                        <table align='center'>
+                    <form onSubmit={(e) => this.addNewActivity(e)}>
+                        {/* < form> */}
+                        <table align='center' >
                             <tr>
                                 <td>
                                     Job Title :
                                 </td>
                                 <td>
-                                    <input type='text'></input><br />
+                                    <input type='text' name='title' onChange={this.addChanges} /><br />
                                 </td>
-
-
+                                <td />
                                 <td>
                                     Description:
-                        </td>
-                                <td>
-                                    <input type='textarea' ></input><br />
                                 </td>
                                 <td>
-                                    <input type='submit' value = 'Submit' />
+                                    <input type='textarea' onChange={this.addChanges} name='description'  ></input><br />
+                                </td>
+                                <td>
+                                    <button className="btn btn-dark">Submit</button>
                                 </td>
                             </tr>
                         </table>
                     </form>
                     <div>
-                        {this.state.title}
-
+                        {this.state.flag ?
+                            <div>
+                                {this.state.title} <br />
+                                {this.state.description}
+                            
+                           
+                    <HomePage jobTitle = {this.state.title} jobDescription = {this.state.description} ></HomePage>
+                    </div>
+                    : null}
                     </div>
                 </div>
             </div >
