@@ -17,11 +17,11 @@ export default class JobPortal extends React.Component {
                                 <span>
                                     <ul className='navbar-link u-inline u-vAlignTop u-padding-unset' >
                                         <li>
-                                            <Link to="/" ><img className='logo navbar-brand' alt='Logo' src={require("./Image.jpg")} height='80' widht='80' /></Link>
+                                            <Link to="/home" ><img className='logo navbar-brand' alt='Logo' src={require("./Image.jpg")} height='80' widht='80' /></Link>
                                         </li>
                                         <div className = 'link-div'>
                                         <li>
-                                            <Link to="/"><b className = 'navbar-text'>Home</b></Link>
+                                            <Link to="/home/"><b className = 'navbar-text'>Home</b></Link>
                                         </li>
                                         <li>
                                             <Link to='/postjobs/'><b className='navbar-text'>Post a Job</b></Link>
@@ -38,7 +38,7 @@ export default class JobPortal extends React.Component {
                                 </span>
                             </div>
                         </div>
-                        <Route path="/" exact component={HomePage} />
+                        <Route path="/home/" exact component={HomePage} />
                         <Route path="/searchjobs/" component={SearchJobs} />
                         <Route path="/postjobs/" component={PostJobs} />
                         <Route path="/myprofile/" component={MyProfile} />
