@@ -7,20 +7,22 @@ export default class HomePage extends React.Component {
 
         const newJobTitle = this.props.jobTitle;
         const newJobDescription = this.props.jobDescription;
-        const newJobObj = {title: newJobTitle, description: newJobDescription};
+        const newJobObj = { title: newJobTitle, description: newJobDescription };
         const jobObj = this.state.data;
         if (newJobTitle !== null || newJobDescription !== null) {
             this.setState((prevState) => {
-                data : prevState.jobs.data.push(newJobObj)
+                data: prevState.jobs.data.push(newJobObj)
             })
         }
+    
 
         this.setState((prevState) => ({
             flag: !(prevState.flag),
         }));
         console.log(this.state.jobs.data);
-
+        
     }
+
 
     constructor(props) {
         super(props);
@@ -28,11 +30,11 @@ export default class HomePage extends React.Component {
             flag: false,
             jobs: {
                 data: [
-                    {title: 'Graphic Designer', description: 'Need Someone to Create a Logo'},
-                    {title: 'Programmer', description: 'Need Someone to create my Startup Site'},
-                    {title: 'Marketer', description: 'Need Someone to popularize my Startup Site'},
-                    {title: 'Security Engineer', description: 'Need Someone to create my Startup Site'},
-                    {title: 'Network Engineer', description: 'Network Maintenance for the website.'}
+                    { title: 'Graphic Designer', description: 'Need Someone to Create a Logo' },
+                    { title: 'Programmer', description: 'Need Someone to create my Startup Site' },
+                    { title: 'Marketer', description: 'Need Someone to popularize my Startup Site' },
+                    { title: 'Security Engineer', description: 'Need Someone to create my Startup Site' },
+                    { title: 'Network Engineer', description: 'Network Maintenance for the website.' }
                 ]
 
             }
@@ -55,14 +57,11 @@ export default class HomePage extends React.Component {
 
         return (
             <div className="home-div-main container">
-                {/*<h3>{this.props.jobTitle}</h3>
-                <h3>{this.props.jobDescription}</h3>*/}
                 <div className='home-div-sub container'>
                     <div className='jumbotron' id="jumbotron-changes">
                         <h1>Job Portal</h1>
                     </div>
                     {!this.state.flag ?
-
                         <h5>
                             <button className='btn-link' onClick={this.showJobs}>Current Jobs</button>
                         </h5>
