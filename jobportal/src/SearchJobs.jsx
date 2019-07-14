@@ -5,6 +5,7 @@ export default class SearchJobs extends React.Component {
         return (
             <div>
                 <h1>Search</h1>
+     
             </div>
         )
     }

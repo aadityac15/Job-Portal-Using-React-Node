@@ -1,13 +1,12 @@
 import React from 'react';
-import {BrowserRouter as Router, Link, Route} from "react-router-dom";
+import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
 import SearchJobs from './SearchJobs';
 import PostJobs from './PostJobs';
 import MyProfile from './MyProfile';
 import HomePage from './HomePage';
 import './JobPortal.css';
 
-export default class JobPortal extends React.Component {
-    render() {
+export default function JobPortal() {
         return (
             <div>
                 <Router>
@@ -25,13 +24,8 @@ export default class JobPortal extends React.Component {
                                             <Link to="/home/"><b className='navbar-text'>Home</b></Link>
                                         </li>
                                         <li>
-                                            <Link to= {{
-                                                pathname: '/postjobs/',
-                                                state : {displayFlag : false}}}
-
-
-
-                                            ><b className='navbar-text'>Post a Job</b></Link>
+                                            <Link to= '/postjobs/'>
+                                                <b className='navbar-text'>Post a Job</b></Link>
                                         </li>
                                         <li>
                                             <Link to='/searchjobs/'><b
@@ -47,16 +41,17 @@ export default class JobPortal extends React.Component {
                                 </span>
                             </div>
                         </div>
-                        <Route path = '/' exact component = {HomePage} />
+                        <Switch>
+                        <Route exact path = '/' component = {HomePage} />
                         <Route path="/home/" component={HomePage}/>
                         <Route path="/searchjobs/" component={SearchJobs}/>
-                        <Route path="/postjobs/" component={PostJobs}/>
+                        <Route path="/postjobs/" component={(props)=>
+                            <PostJobs {...props} displayFlag = {false} />}/>
                         <Route path="/myprofile/" component={MyProfile}/>
+                        </Switch>
 
                     </div>
                 </Router>
             </div>
         );
     };
-
-}
