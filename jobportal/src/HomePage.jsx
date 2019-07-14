@@ -19,7 +19,7 @@ export default class HomePage extends React.Component {
     console.log(this.state.jobs.data);
   };
 
- c constructor(props) {
+ constructor(props) {
     super(props);
     this.state = {
       flag: false,
