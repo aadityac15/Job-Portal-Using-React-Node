@@ -3,13 +3,19 @@ import "./homepage.css";
 
 export default class HomePage extends React.Component {
   showJobs = () => {
-    const newJobTitle = this.props.jobTitle;
-    console.log("New Job title", newJobTitle);
-    const newJobDescription = this.props.jobDescription;
-    const newJobObj = { title: newJobTitle, description: newJobDescription };
-    if (newJobTitle !== undefined && newJobDescription !== undefined) {
+    const { title } = this.props.location.state;
+    console.log("state:",this.props.location.state)
+    console.log("New Job title", title);
+    const { description } = this.props.location.state;
+    const {jobs} = this.state;
+    const newJobObj = { title: title, description: description };
+    jobs.data.push(newJobObj)
+    if (title !== undefined && description !== undefined) {
       this.setState(prevState => {
-        prevState.jobs.data.push(newJobObj);
+        return {...prevState,
+        jobs: {
+          data: [...jobs.data]
+        }}
       });
     }
 
@@ -19,7 +25,7 @@ export default class HomePage extends React.Component {
     console.log(this.state.jobs.data);
   };
 
- constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       flag: false,
@@ -56,8 +62,8 @@ export default class HomePage extends React.Component {
       return (
         <li>
           <div className="home-div-list">
-            <h4>{job.title}</h4>
-            <p>{job.description}</p>
+            <h4>{job && job.title}</h4>
+            <p>{job && job.description}</p>
           </div>
         </li>
       );

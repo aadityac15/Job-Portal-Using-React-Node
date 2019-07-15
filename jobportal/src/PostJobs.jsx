@@ -14,13 +14,6 @@ export default class PostJobs extends React.Component {
       displayFlag: false
     };
   }
-
-//   componentDidUpdate = () => {
-//     this.setState(prevState => {
-//       return { displayFlag: false };
-//     });
-//   };
-
   addChanges = e => {
     e.preventDefault();
     console.log(e.target.name);
@@ -31,82 +24,67 @@ export default class PostJobs extends React.Component {
   };
   addNewActivity = e => {
     e.preventDefault();
-    this.setState(prevState => {
-      return {
-        flag: !prevState.flag
-      };
+    // alert("New Activity");
+    this.setState({
+      flag: !this.state.flag
     });
-    console.log(e);
-    console.log(this.state);
+    console.log("in add new", this.state);
   };
-  changeFlag = () => {
-    this.setState(prevState => {
-      return {
-        displayFlag: !prevState.displayFlag
-      };
-    });
-    alert("New Job added");
+
+  componentDidUpdate = () => {
+    console.log("l", this.state);
   };
 
   render() {
     return (
-      <Router>
-        {this.state.displayFlag ? (
-          <Route
-            path="/home/"
-            render={props => (
-              <HomePage
-                {...props}
-                jobTitle={this.state.title}
-                jobDescription={this.state.description}
-              />
-            )}
-          />
-        ) : (
-          <div className="container post-jobs-main">
-            <h1> Post a Job </h1> <br />
-            <div className="post-job-form-div container">
-              <form onSubmit={e => this.addNewActivity(e)}>
-                <table align="center">
-                  <tr>
-                    <td> Job Title: </td>
-                    <td>
-                      <input
-                        type="text"
-                        name="title"
-                        onChange={this.addChanges}
-                      />
-                      <br />
-                    </td>
-                    <td />
-                    <td> Description: </td>
-                    <td>
-                      <input
-                        type="textarea"
-                        onChange={this.addChanges}
-                        name="description"
-                      />
-                      <br />
-                    </td>
-                    <td>
-                      <Link to="/home/">
-                        <button
-                          className="btn btn-dark"
-                          type="button"
-                          onClick={this.changeFlag}
-                        >
-                          Submit
-                        </button>
-                      </Link>
-                    </td>
-                  </tr>
-                </table>
-              </form>
-            </div>
-          </div>
-        )}
-        }
-      </Router>
+      <div className="container post-jobs-main">
+        <h1> Post a Job </h1> <br />
+        <div className="post-job-form-div container">
+          <form onSubmit={e => this.addNewActivity(e)}>
+            <table align="center">
+              <tr>
+                <td> Job Title: </td>
+                <td>
+                  <input
+                    type="text"
+                    name="title"
+                    value={this.state.title}
+                    onChange={this.addChanges}
+                  />
+                  <br />
+                </td>
+                <td />
+                <td />
+                <td> Description: </td>
+                <td>
+                  <input
+                    type="textarea"
+                    onChange={this.addChanges}
+                    name="description"
+                    value={this.state.description}
+                  />
+                  <br />
+                </td>
+                <td>
+                  <Link
+                    to={{
+                      pathname: "/home/",
+                      state: {
+                        title: this.state.title,
+                        description: this.state.description
+                      }
+                    }}
+                  >
+                    <button className="btn btn-dark" type="submit">
+                      Submit
+                    </button>
+                  </Link>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </div>
     );
   }
 }
