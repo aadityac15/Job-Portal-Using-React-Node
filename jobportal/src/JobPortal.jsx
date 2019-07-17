@@ -4,6 +4,7 @@ import SearchJobs from "./SearchJobs";
 import PostJobs from "./PostJobs";
 import MyProfile from "./MyProfile";
 import HomePage from "./HomePage";
+import CreateProfile from "./CreateProfile";
 import "./JobPortal.css";
 
 export default function JobPortal() {
@@ -64,6 +65,7 @@ export default function JobPortal() {
               path="/postjobs/"
               component={props => <PostJobs {...props} displayFlag={false} />}
             />
+            <Route path="/createprofile/" component={CreateProfile} />
             <Route path="/myprofile/" component={MyProfile} />
           </Switch>
         </div>
