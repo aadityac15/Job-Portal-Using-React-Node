@@ -3,22 +3,24 @@ import "./homepage.css";
 
 export default class HomePage extends React.Component {
   showJobs = () => {
-    const { title } = this.props.location.state;
-    console.log("state:", this.props.location.state);
-    console.log("New Job title", title);
-    const { description } = this.props.location.state;
-    const { jobs } = this.state;
-    const newJobObj = { title: title, description: description };
-    jobs.data.push(newJobObj);
-    if (title !== undefined && description !== undefined) {
-      this.setState(prevState => {
-        return {
-          ...prevState,
-          jobs: {
-            data: [...jobs.data]
-          }
-        };
-      });
+    if (this.props.location.state) {
+      const { title } = this.props.location.state;
+      console.log("state:", this.props.location.state);
+      console.log("New Job title", title);
+      const { description } = this.props.location.state;
+      const { jobs } = this.state;
+      const newJobObj = { title: title, description: description };
+      jobs.data.push(newJobObj);
+      if (title !== undefined && description !== undefined) {
+        this.setState(prevState => {
+          return {
+            ...prevState,
+            jobs: {
+              data: [...jobs.data]
+            }
+          };
+        });
+      }
     }
 
     this.setState(prevState => ({
