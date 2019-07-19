@@ -20,6 +20,12 @@ export default class HomePage extends React.Component {
             }
           };
         });
+        this.setState (prevState => {
+            return {
+                title : '',
+                description : ''
+            }
+        })
       }
     }
 
@@ -60,6 +66,14 @@ export default class HomePage extends React.Component {
     };
   }
 
+  changeFlag = () => {
+      this.setState (prevState => {
+          return {
+              flag : !prevState.flag
+          }
+      })
+  }
+
   render() {
     const jobList = this.state.jobs.data.map((job, i) => {
       console.log(job);
@@ -87,7 +101,7 @@ export default class HomePage extends React.Component {
             </h5>
           ) : (
             <h5>
-              <button className="btn-link" onClick={this.showJobs}>
+              <button className="btn-link" onClick={this.changeFlag}>
                 Collapse
               </button>
             </h5>

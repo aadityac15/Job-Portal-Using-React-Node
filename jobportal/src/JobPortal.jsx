@@ -21,8 +21,8 @@ export default function JobPortal() {
                 <ul className="navbar-link u-inline u-vAlignTop u-padding-unset">
                   <li>
                     <Link to="/home/">
-                      <img
-                        className="log o navbar-brand"
+                    <img
+                        className="logo navbar-brand"
                         alt="Logo"
                         src={require("./Image.jpg")}
                         height="80"
