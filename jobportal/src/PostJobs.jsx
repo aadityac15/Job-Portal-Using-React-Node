@@ -28,11 +28,11 @@ export default class PostJobs extends React.Component {
     this.setState({
       flag: !this.state.flag
     });
+    this.setState({
+       title : "",
+        description: ""
+    })
     console.log("in add new", this.state);
-  };
-
-  componentDidUpdate = () => {
-    console.log("l", this.state);
   };
 
   render() {
@@ -50,6 +50,7 @@ export default class PostJobs extends React.Component {
                     name="title"
                     value={this.state.title}
                     onChange={this.addChanges}
+                    onFocu
                   />
                   <br />
                 </td>

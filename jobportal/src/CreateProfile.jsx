@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Link, Route, Router } from "react-router-dom";
-
+import './postjobs.css';
 export default class CreateProfile extends React.Component {
   render() {
     return (
-      <div className="container">
+      <div className="container align-center">
         <form>
           <table>
             <tr>

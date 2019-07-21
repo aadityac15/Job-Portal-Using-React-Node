@@ -34,11 +34,11 @@ h1 {
     color: white;
 }
 
-.align-center {
+/* .align-center {
     display: flex;
     flex-direction: row;
     align-content: center;
-}
+} */
 
 
 /* Tags */
