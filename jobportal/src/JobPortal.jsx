@@ -12,25 +12,24 @@ export default function JobPortal() {
     <div>
       <Router>
         <div className="header">
-          <div
+          {/* <div
             className="navigation-header container"
             id="bootstrap-overrrides"
-          >
-            <div className="navigation-div u-inlineBlock u-nowrap">
-              <span>
-                <ul className="navbar-link u-inline u-vAlignTop u-padding-unset">
-                  <li>
-                    <Link to="/home/">
-                      <img
-                        className="log o navbar-brand"
-                        alt="Logo"
-                        src={require("./Image.jpg")}
-                        height="80"
-                        widht="80"
-                      />
-                    </Link>
-                  </li>
-                  <div className="link-div">
+          > */}
+            <div className="container navigation-header navigation-div u-nowrap flex-display-div">
+
+                <Link to="/home/">
+                  <img
+                    className="log o navbar-brand"
+                    alt="Logo"
+                    src={require("./Image.jpg")}
+                    height="80"
+                    widht="80"
+                  />
+                </Link>
+
+                <div className="link-div flex-display-ul">
+                  <ul className="navbar-link u-inline u-vAlignTop u-padding-unset">
                     <li>
                       <Link to="/home/">
                         <b className="navbar-text">Home</b>
@@ -52,10 +51,10 @@ export default function JobPortal() {
                         <b className="navbar-text b-spacing">My Profile</b>
                       </Link>
                     </li>
-                  </div>
-                </ul>
-              </span>
-            </div>
+                  </ul>
+                </div>
+
+            {/* </div> */}
           </div>
           <Switch>
             <Route exact path="/" component={HomePage} />

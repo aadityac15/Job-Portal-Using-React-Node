@@ -1,13 +1,22 @@
 /* Classes */
 
+.flex-display-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-display-ul {
+    display: flex;
+    align-self: flex-end;
+}
+
 .navigation-div {
-    padding-top: 1%;
+    /* padding-top: 1%; */
     width: 100%;
-    display: inline-block;
 }
 
 .header {
-    background-color: ghostwhite;
+    /* background-color: ghostwhite; */
 }
 
 .logo {
@@ -25,7 +34,7 @@
     border-bottom: 1px black solid;
     padding-left: 2rem;
     padding-right: 2rem;
-    background-color: ghostwhite;
+    /* background-color: ghostwhite; */
 }
 
 .li-spacing {
@@ -65,6 +74,7 @@
 
 .u-inline li {
     display: inline;
+    /* padding: 2% */
 }
 
 .u-inlineBlock {
@@ -92,7 +102,7 @@ li {
 
 img,
 b {
-    color: green;
+    color: white;
     flex-direction: row;
     padding-left: 1.5%;
     padding-right: 1.5%;

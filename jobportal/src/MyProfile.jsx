@@ -12,7 +12,6 @@ export default class MyProfile extends React.Component {
   render() {
     return (
       <div className="container align-center">
-        <Router>
           {this.state.profileCreated ? (
             <h1>My Profile</h1>
           ) : (
@@ -20,7 +19,6 @@ export default class MyProfile extends React.Component {
               <Link to="/createprofile/">Click here to Create a Profile</Link>
             </>
           )}
-        </Router>
       </div>
     );
   }
