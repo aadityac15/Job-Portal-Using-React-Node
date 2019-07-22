@@ -1,0 +1,12 @@
+.display-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.padding-top {
+    padding-top: 2%;
+}
+
+.display-border {
+    border: lightgrey solid 0.5px;
+}

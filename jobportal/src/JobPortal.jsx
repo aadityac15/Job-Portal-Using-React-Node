@@ -12,47 +12,42 @@ export default function JobPortal() {
     <div>
       <Router>
         <div className="header">
-          {/* <div
-            className="navigation-header container"
-            id="bootstrap-overrrides"
-          > */}
-            <div className="container navigation-header navigation-div u-nowrap flex-display-div">
+          <div className="container navigation-header navigation-div u-nowrap flex-display-div">
+            <Link to="/home/">
+              <img
+                className="log o navbar-brand"
+                alt="Logo"
+                src={require("./Image.jpg")}
+                height="40"
+                widht="40"
+              />
+            </Link>
 
-                <Link to="/home/">
-                  <img
-                    className="log o navbar-brand"
-                    alt="Logo"
-                    src={require("./Image.jpg")}
-                    height="80"
-                    widht="80"
-                  />
-                </Link>
+            <div className="link-div flex-display-ul">
+              <ul className="navbar-link u-inline u-vAlignTop u-padding-unset">
+                <li>
+                  <Link to="/home/">
+                    <b className="navbar-text">Home</b>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/postjobs/">
+                    <b className="navbar-text">Post a Job</b>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/searchjobs/">
+                    <b className="navbar-text">Search For Jobs</b>
+                  </Link>
+                </li>
 
-                <div className="link-div flex-display-ul">
-                  <ul className="navbar-link u-inline u-vAlignTop u-padding-unset">
-                    <li>
-                      <Link to="/home/">
-                        <b className="navbar-text">Home</b>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/postjobs/">
-                        <b className="navbar-text">Post a Job</b>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/searchjobs/">
-                        <b className="navbar-text">Search For Jobs</b>
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link to="/myprofile/">
-                        <b className="navbar-text b-spacing">My Profile</b>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
+                <li>
+                  <Link to="/myprofile/">
+                    <b className="navbar-text b-spacing">My Profile</b>
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
             {/* </div> */}
           </div>

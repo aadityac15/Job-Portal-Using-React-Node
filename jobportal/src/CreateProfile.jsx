@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Link, Route, Router } from "react-router-dom";
-import './postjobs.css';
+// import "./CreateProfile.css";
 export default class CreateProfile extends React.Component {
   render() {
     return (
@@ -29,6 +29,14 @@ export default class CreateProfile extends React.Component {
               <td>University:</td>
               <td>
                 <input type="text" name="userUniversity" />
+              </td>
+            </tr>
+            <tr>
+              <td />
+              <td>
+                <button className = 'btn btn-dark' type="submit">
+                  <Link to="/myprofile">Submit</Link>
+                </button>
               </td>
             </tr>
           </table>

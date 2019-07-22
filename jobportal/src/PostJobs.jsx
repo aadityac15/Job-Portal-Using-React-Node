@@ -76,7 +76,7 @@ export default class PostJobs extends React.Component {
                       }
                     }}
                   >
-                    <button className="btn btn-dark" type="submit">
+                    <button className="btn btn-outline-primary" type="submit">
                       Submit
                     </button>
                   </Link>
