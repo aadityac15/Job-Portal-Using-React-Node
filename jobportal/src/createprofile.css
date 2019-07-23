@@ -1,7 +1,26 @@
 .align-center {
-    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center
+    align-content: center;
 }
 
+.flex-display {
+    display: flex;
+}
+
+.padding-bottom {
+    padding-bottom: 1%;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.display-inline {
+    display: inline;
+}
+
+body {
+    text-align: center;
+}
