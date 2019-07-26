@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import SearchJobs from "./SearchJobs";
 import PostJobs from "./PostJobs";
 import MyProfile from "./MyProfile";
@@ -13,7 +14,7 @@ export default function JobPortal() {
       <Router>
         <div className="header">
           <div className="container navigation-header navigation-div u-nowrap flex-display-div">
-            <Link to="/home/">
+            <NavLink to="/home/">
               <img
                 className="log o navbar-brand"
                 alt="Logo"
@@ -21,35 +22,53 @@ export default function JobPortal() {
                 height="40"
                 widht="40"
               />
-            </Link>
+            </NavLink>
 
-            <div className="link-div flex-display-ul">
-              <ul className="navbar-link u-inline u-vAlignTop u-padding-unset">
+            <div className="link-div flex-display-ul ">
+              <ul className="navbar-link u-inline u-vAlignTop padding-top u-padding-unset flex-display-ul">
                 <li>
-                  <Link to="/home/">
-                    <b className="navbar-text">Home</b>
-                  </Link>
+                  <NavLink
+                    to="/home/"
+                    activeStyle={{
+                      color: "red"
+                    }}
+                  >
+                    <b className="border-navlink"> Home </b>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/postjobs/">
-                    <b className="navbar-text">Post a Job</b>
-                  </Link>
+                  <NavLink
+                    to="/postjobs/"
+                    activeStyle={{
+                      color: "red"
+                    }}
+                  >
+                    <b className="border-navlink "> Post a Job </b>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/searchjobs/">
-                    <b className="navbar-text">Search For Jobs</b>
-                  </Link>
+                  <NavLink
+                    to="/searchjobs/"
+                    activeStyle={{
+                      color: "red"
+                    }}
+                  >
+                    <b className="border-navlink ">Search For Jobs</b>
+                  </NavLink>
                 </li>
 
                 <li>
-                  <Link to="/myprofile/">
-                    <b className="navbar-text b-spacing">My Profile</b>
-                  </Link>
+                  <NavLink
+                    to="/myprofile/"
+                    activeStyle={{
+                      color: "red"
+                    }}
+                  >
+                    <b className="border-navlink ">My Profile</b>
+                  </NavLink>
                 </li>
               </ul>
             </div>
-
-            {/* </div> */}
           </div>
           <Switch>
             <Route exact path="/" component={HomePage} />

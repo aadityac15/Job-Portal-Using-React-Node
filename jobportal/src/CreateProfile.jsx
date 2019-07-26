@@ -1,18 +1,37 @@
 import React from "react";
 import { BrowserRouter as Link, Route, Router } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 // import "./CreateProfile.css";
 export default class CreateProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userName: ""
+      profileCreated : false,
+      userName: "",
+      userEmail: "",
+      userResume: undefined,
+      userUniversity: ""
     };
   }
+
+  changeFlag = () => {
+
+    this.setState (prevState => {
+      return {profileCreated : !prevState.profileCreated}
+    })
+
+  }
+
+  addProperty = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+    console.log(this.state);
+  };
   render() {
     return (
       <div className="container align-center">
         <form
-          method="post"
           className="flex-display align-center"
           onSubmit={e => this.addUser(e)}
         >
@@ -44,7 +63,6 @@ export default class CreateProfile extends React.Component {
               <td className="padding-bottom">
                 <input
                   type="file"
-                  required
                   name="userResume"
                   onChange={this.addProperty}
                 />
@@ -68,7 +86,20 @@ export default class CreateProfile extends React.Component {
                   onClick={this.changeFlag}
                   type="submit"
                 >
-                  <Link to="/myprofile">Submit</Link>
+                  <NavLink
+                    to={{
+                      pathname: "/myprofile/",
+                      state: {
+                        userName: this.state.userName,
+                        userEmail: this.state.userEmail,
+                        userResume: this.state.userResume,
+                        userUniversity: this.state.userUniversity,
+                        profileCreated: this.state.profileCreated
+                      }
+                    }}
+                  >
+                    Submit
+                  </NavLink>
                 </button>
               </td>
             </tr>

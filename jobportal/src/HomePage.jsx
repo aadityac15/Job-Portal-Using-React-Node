@@ -20,12 +20,7 @@ export default class HomePage extends React.Component {
             }
           };
         });
-        this.setState (prevState => {
-            return {
-                title : '',
-                description : ''
-            }
-        })
+        this.props.location.state = undefined;
       }
     }
 
@@ -67,12 +62,12 @@ export default class HomePage extends React.Component {
   }
 
   changeFlag = () => {
-      this.setState (prevState => {
-          return {
-              flag : !prevState.flag
-          }
-      })
-  }
+    this.setState(prevState => {
+      return {
+        flag: !prevState.flag
+      };
+    });
+  };
 
   render() {
     const jobList = this.state.jobs.data.map((job, i) => {

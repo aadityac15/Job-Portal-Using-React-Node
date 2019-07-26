@@ -28,11 +28,14 @@ export default class PostJobs extends React.Component {
     this.setState({
       flag: !this.state.flag
     });
-    this.setState({
-       title : "",
-        description: ""
-    })
+
     console.log("in add new", this.state);
+  };
+  componentWillMount = () => {
+    this.setState({
+      title: "",
+      description: ""
+    });
   };
 
   render() {

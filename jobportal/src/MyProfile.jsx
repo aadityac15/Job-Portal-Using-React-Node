@@ -1,15 +1,46 @@
 import React from "react";
-import "./homepage.css";
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
-// import CreateProfile from "./CreateProfile";
 import "./MyProfile.css";
+import { BrowserRouter as Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 export default class MyProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      profileCreated: false
+      profileCreated: false,
+      profile: {
+        userEmail: "",
+        userResume: undefined,
+        userName: "",
+        userUniversity: ""
+      }
     };
   }
+  componentDidMount = () => {
+    if (this.props.location.state) {
+      const {
+        profileCreated,
+        userName,
+        userResume,
+        userEmail,
+        userUniversity
+      } = this.props.location.state;
+
+      console.log(userName);
+      // const profileState = this.state.profile/;
+
+      this.setState({
+        profile: {
+          profileCreated: profileCreated,
+          userName: userName,
+          userEmail: userEmail,
+          userUniversity: userUniversity,
+          userResume: userResume
+        }
+      });
+    }
+    console.log(this.state);
+  };
   render() {
     return (
       <div
@@ -17,12 +48,18 @@ export default class MyProfile extends React.Component {
         style={{ display: "flex", justifyContent: "center" }}
       >
         {this.state.profileCreated ? (
-          <h1>My Profile</h1>
+          <div>
+            <h1>My Profile</h1>
+            <h3>{this.state.profile.userName}</h3>
+          </div>
         ) : (
           <h2>
-            <Link to="/createprofile/" className="display-border flex-display">
+            <NavLink
+              to="/createprofile/"
+              className="display-border flex-display"
+            >
               Click here to Create a Profile
-            </Link>
+            </NavLink>
           </h2>
         )}
       </div>
