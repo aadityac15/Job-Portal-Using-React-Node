@@ -2,43 +2,11 @@ import React from "react";
 import "./postjobs.css";
 import HomePage from "./HomePage";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import { Route, Redirect } from "react-router";
+import { Route, Redirect } from "react-router-dom";
 
-export default class PostJobs extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: "",
-      description: "",
-      flag: false,
-      displayFlag: false
-    };
-  }
-  addChanges = e => {
-    e.preventDefault();
-    console.log(e.target.name);
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-    console.log("The State : ", this.state);
-  };
-  addNewActivity = e => {
-    e.preventDefault();
-    // alert("New Activity");
-    this.setState({
-      flag: !this.state.flag
-    });
+const PostJobs = () =>{
+  
 
-    console.log("in add new", this.state);
-  };
-  componentWillMount = () => {
-    this.setState({
-      title: "",
-      description: ""
-    });
-  };
-
-  render() {
     return (
       <div className="container post-jobs-main">
         <h1> Post a Job </h1> <br />
@@ -70,19 +38,9 @@ export default class PostJobs extends React.Component {
                   <br />
                 </td>
                 <td>
-                  <Link
-                    to={{
-                      pathname: "/home/",
-                      state: {
-                        title: this.state.title,
-                        description: this.state.description
-                      }
-                    }}
-                  >
-                    <button className="btn btn-outline-primary" type="submit">
-                      Submit
-                    </button>
-                  </Link>
+                  <button className="btn btn-outline-primary" type="submit">
+                    Submit
+                  </button>
                 </td>
               </tr>
             </table>

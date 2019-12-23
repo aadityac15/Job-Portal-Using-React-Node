@@ -8,7 +8,7 @@ import HomePage from "./HomePage";
 import CreateProfile from "./CreateProfile";
 import "./JobPortal.css";
 
-export default function JobPortal() {
+const JobPortal = () => {
   return (
     <div>
       <Router>
@@ -71,18 +71,17 @@ export default function JobPortal() {
             </div>
           </div>
           <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/home/" component={HomePage} />
             <Route path="/searchjobs/" component={SearchJobs} />
-            <Route
-              path="/postjobs/"
-              component={props => <PostJobs {...props} displayFlag={false} />}
-            />
+            <Route path="/postjobs/" component={PostJobs} />
             <Route path="/createprofile/" component={CreateProfile} />
             <Route path="/myprofile/" component={MyProfile} />
+            <Route exact path="/" component={HomePage} />
+            <Route path="/home/" component={HomePage} />
           </Switch>
         </div>
       </Router>
     </div>
   );
 }
+
+export default JobPortal;
